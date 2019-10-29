@@ -1,6 +1,6 @@
 partial default alphanumeric_keys
 xkb_symbols "typo-uk" {
-    name[Group1]= "Ukrainian (Typographic)";
+    name[Group1]= "Ukrainian (Typographic by Ilya Birman)";
 
     // 1st keyboard row
     key <TLDE> { [        apostrophe,       Cyrillic_IO,           Cyrillic_io,             dead_grave ] }; // "~"
@@ -20,7 +20,7 @@ xkb_symbols "typo-uk" {
     // 2nd keyboard row
     key <AD01> { [   Cyrillic_shorti,   Cyrillic_SHORTI,              NoSymbol,             dead_breve  ] }; // "q"
     key <AD02> { [      Cyrillic_tse,      Cyrillic_TSE,                 U0475,                  U0474  ] }; // "w" // U+0475 CYRILLIC SMALL LETTER IZHITSA // U+0474 CYRILLIC CAPITAL LETTER IZHITSA
-    key <AD03> { [        Cyrillic_u,        Cyrillic_U,              EuroSign,               NoSymbol  ] }; // "e"
+    key <AD03> { [        Cyrillic_u,        Cyrillic_U,              EuroSign,                  U2211  ] }; // "e" // U+2211 GREEK LETTER SIGMA (SUM SIGN)
     key <AD04> { [       Cyrillic_ka,       Cyrillic_KA,            registered,         dead_abovering  ] }; // "r"
     key <AD05> { [       Cyrillic_ie,       Cyrillic_IE,             trademark,               NoSymbol  ] }; // "t"
     key <AD06> { [       Cyrillic_en,       Cyrillic_EN,                 U0463,                  U0462  ] }; // "y" // U+0463 CYRILLIC SMALL LETTER YAT // U+0462 CYRILLIC CAPITAL LETTER YAT
@@ -130,4 +130,7 @@ xkb_symbols "typo-uk-russian" {
 
     // Adds comma on keypad DELETE key
     include "kpdl(comma)"
+
+    // My broken key
+    key <KPDV> { [             slash,         backslash,                   bar,               NoSybol  ] };
 };

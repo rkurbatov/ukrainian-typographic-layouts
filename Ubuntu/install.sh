@@ -7,13 +7,15 @@ fi
 
 sudo rm -f /usr/share/X11/xkb/symbols/typo-uk
 sudo rm -f /usr/share/X11/xkb/symbols/typo-ru-ukrainian
+sudo rm -f /usr/share/X11/xkb/symbols/typo-en
 sudo cp symbols/* /usr/share/X11/xkb/symbols/
 
 # Edit /usr/share/X11/xkb/rules/evdev.lst
 
-sudo sed -i -E 's/\s*typo(-ru|-uk).*//g' /usr/share/X11/xkb/rules/evdev.lst
-sudo sed -i -E 's/(! layout)/\1\n  typo-uk         Ukrainian (Typographic)\n  typo-ru-ukrainian         Russian (Typographic + Ukrainian)/g' /usr/share/X11/xkb/rules/evdev.lst
-sudo sed -i -E 's/(! variant)/\1\n  typo-uk-russian    typo-uk: Ukrainian (Typographic + Russian)/g' /usr/share/X11/xkb/rules/evdev.lst
+sudo sed -i -E 's/\s*typo(-ru|-uk|-en).*//g' /usr/share/X11/xkb/rules/evdev.lst
+sudo sed -i -E 's/(! layout)/\1\n  typo-uk         Ukrainian (Typographic by Ilya Birman)\n  typo-ru-ukrainian         Russian (Typographic + Ukrainian by Ilya Birman)/g' /usr/share/X11/xkb/rules/evdev.lst
+sudo sed -i -E 's/(! variant)/\1\n  typo-uk-russian    typo-uk: Ukrainian (Typographic + Russian by Ilya Birman)/g' /usr/share/X11/xkb/rules/evdev.lst
+sudo sed -i -E 's/(! layout)/\1\n  typo-en    typo-en: English (Typographic by Ilya Birman)/g' /usr/share/X11/xkb/rules/evdev.lst
 
 # Edit /usr/share/X11/xkb/rules/evdev.xml
 
